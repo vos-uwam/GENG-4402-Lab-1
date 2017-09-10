@@ -1,0 +1,16 @@
+\section{Results}
+  \subsection{Frequency Response Experiment}
+  Steady state gain was calculated by taking the ratio of load shaft speed to constant input, then converted to a decible amplitude using
+  $$ G_{dB} = 20 \cdot log_{10}(G)$$ from the workbook \cite{workbook}. For each frequency step up to 8 Hz, the gain was calculated and
+  tabulated in table \ref{tab1.1}.\\
+  The results were plotted in the bode plot, figure %\ref{figure}%. Ginput(1) was used to find the -3dB cutoff frequency, $$f_{3dB}$$.
+  The time constant was calculated using $$\tau = \frac{1}{2 \cdot \pi \f_{3dB}}. The time constant and steady state gain were tabulated
+  in table \ref{tab1.2}.\\
+  
+  \subsection{Bump Test Experiment}
+  The open loop gain was calculated by taking the ratio of step change to the difference between steady state speed and initial speed.
+  That is, the height of the input voltage trace in figure %\ref{figure}% compared to the height of the steady state motor speed on the same figure.
+  Ginput(1) was used to obtain the maximum and minimum values for calculation.\\
+  The expression $$ y(t_{1}) = 0.632 \cdot y_{ss} + y_{0}$$ from the workbook gives the time $$ t_{1} $$ required to determine $$\tau$$ \cite{workbook}.
+  $$y(t_{1})$$ was found in the Matlab command line, then $$t_{1}$$ was found using ginput(1). The time constant was calculated using 
+  $$\tau = t_{1} - t_{0}$$, then tabulated along with the gain into table \ref{tab1.2}.

@@ -1,0 +1,62 @@
+\section{Pre-Lab}
+All values of the form x.x.x are references to the student workbook \cite{workbook}
+  \subsection{} Taking equation 1.1.26:
+  $$ (\frac{d}{dt}\omega_{l}(t))J_{eq} + B_{eq,v}\omega_{l}(t) = A_{m}V_{m}(t) $$
+  Applying the Laplace transform:
+  $$ J_{eq}S\Omega_{l}(s) + B_{eq,v}\Omega_{l}(s) = A_{m}V_{m}(s) $$
+  Rearranging into the transfer function:
+  $$ \frac{\Omega_{l}(s)}{V_{m}(s)} = \frac{A_{m}}{J_{eq}s + B_{eq,v}} $$
+  \subsection{} We know from equation 1.1.1 that the transfer function takes the form:
+  $$  \frac{\Omega_{l}(s)}{V_{m}(s)} = \frac{K}{\tau s + 1} $$
+  Therefore fitting the answer form question 1 to this form we get:
+  $$ \tau = \frac{J_{eq}}{B_{eq,v}} $$
+  $$ K = \frac{A_{m}}{B_{eq,v}} $$
+  \subsection{} Using equations 1.1.26 and 1.1.27 along with the specifications from
+  the user manual \cite{user_manual} we get the values:
+  $$ B_{eq,v} = 0.0844 Nms/rad $$
+  $$ A_{m} = 0.129 Nm/V $$
+  \subsection{} Both $ J_{tach} $ and $ J_{m, rotor} $ are given in the user manual \cite{user_manual}
+   hence we can simply determine $ J_{m} $ with:
+  $$ J_{m} = J_{tach} + J_{m, rotor} = 4.606*10^{-7} kg m^{2} $$
+  \subsection{} Using the approximation of each gear as a disc we can use the specifications
+  outlined in \cite{user_manual} to calculate the moment of inertia of each gear.
+  $$ J_{disc} = \frac{mr^{2}}{2} $$
+  For the 24 tooth gear:
+  $$ J_{24} = 1.008*10^{-7} kg m^{2} $$
+  For the 72 tooth gear:
+  $$ J_{72} = 5.415*10^{-6} kg m^{2} $$
+  For the 120 tooth gear:
+  $$ J_{120} = 4.24*10^{-5} kg m^{2} $$
+  Using the "High Gear" configuration from the user manual \cite{user_manual}
+  we can see that the 120 and 72 tooth gears are on the same shaft while the 24
+  tooth gear drives the 120 tooth gear hence the total inertia $ J_{g}$ is given
+  by:
+  $$ J_{g} = J_{72} + J_{120} + J_{24}\frac{120}{24} $$
+  $$ J_{g} = 4.8319 * 10^{-5} kg m^{2}$$
+  \subsection{} We know $ J_{l} = J_{g} + J_{l,ext} $ and from the values in the user
+  manual \cite{user_manual} $ J_{l,ext} = 5 * 10^{-5} kg m^{2} $ therefore:
+  $$ J_{l} = 9.24*10^{-5} kg m^{2}$$
+  \subsection{} Using the load inertia found in the previous question motor inertia found in
+  question 4 and substituting values from the user manual \cite{user_manual}
+  into equation 1.1.18 we get:
+  $$ J_{eq} = 0.002046 kg m^{2}$$
+  \subsection{} We have values for $ B_{eq,v}$, $A_{m}$ and $J_{eq}$ hence using the
+  equations from Question 2 we get:
+  $$ K = 1.528 rad/Vs $$
+  $$ \tau = 0.0243 s $$
+  \subsection{} From section 1.1.2.1 we know the gain is $\frac{1}{\sqrt{2}}$ of the maximum gain:
+  $$ |G_{wl,v}(\omega_{c})| = \frac{\sqrt{2}}{2}|G_{wk,v}0)| $$
+  Hence using equation 1.1.31:
+  $$\frac{\sqrt{2}}{2}|G_{wk,v}0)| = \frac{|G_{wl,v}(0)|}{1+\tau_{e,f}^{2}\omega_{c}^{2}}$$
+  Rearranging to solve for the time constant:
+  $$ \tau_{e,f} = \frac{1}{|w_{c}|} $$
+  \subsection{} Knowing $\omega_{l,ss} = lim_{t\to\infty}\omega_{l}(t)$ and taking the limit of the
+  servo step response from 1.1.40:
+  $$\omega_{l,ss} = KA_{v} + \omega_{l}(t_{0})$$
+  Rearranging for $K$:
+  $$ K = \frac{\omega_{l,ss}-\omega_{l}(t_{0})}{A_{v}} $$
+  Which is consistent with the relationship given in 1.1.34.
+  \subsection{} Substituting $ t = t_{0} + \tau$ into equation 1.1.40 gives us:
+  $$ \omega_{l}(t_{0} + \tau) = KA_{v}(1-e^{-1})+ \omega_{l}(t_{0})$$
+  Which is consistent with equation 1.1.34 through the example given of
+  $y(t_{1})$ in 1.1.35.
